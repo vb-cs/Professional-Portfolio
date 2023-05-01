@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Vinay Bhamidipati</title>
+    <link rel="stylesheet" href="index.css">
+    <!--
+        <link rel='apple-touch-icon' href='assets/professional_pic.jpg'>
+        <link rel="icon" href="assets/favicon.ico" type="image/ico" sizes="16x16" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    -->
+</head>
+
+<body>
+    <header>
+        <nav id="nav-bar" class="nav-bar">
+            <div class="nav-logo">
+                <img class="logo" alt="head shot" src="../assets/professional_pic.jpg" />
+                <a href="#hero">
+                    <h1>Vinay Bhamidipati</h1>
+                </a>
+            </div>
+
+            <div class="nav-links">
+                <ul>
+                    <li>
+                        <a class="nav-links-item" href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-links-item" href="#intro">Introduction</a> <!-- hero -> intro-->
+                    </li>
+                    <li>
+                        <a class="nav-links-item" href="#operating">Operating Principles</a> <!--projects -> operating -->
+                    </li>
+                    <li>
+                        <a class="nav-links-item" href="#methods">Methods</a> <!--projects -> operating -->
+                    </li>
+                    <li>
+                        <a class="nav-links-item" href="#gallery">Gallery</a>  <!--passions -> gallery -->
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-menu">
+                <img id="nav-icon" src="../assets/hamburger.svg" alt="Menu Icon" class="hamburger-icon" />
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <div class="hero-text" data-aos="fade-up">
+                <!-- <p class="greet-text">Hi there! I am</p>-->
+                <p class="text-gradient name-text">S.A.F.E.</p>
+                <p class="job-text">Sensor Assisted Fluxgate Enclosure</p>
+                <p class="intro-text">Modern, commercial digital locks have several glaring flaws that make cracking them easy for even the most novice criminals.
+                     Among these flaws is the ability to unlock a digital lock by simply bringing a strong magnet close enough. 
+                     This type of attack is known as magnetic tampering, and it was the inspiration for this project. 
+                     The questions I sought to answer were (1), “How could I design a digital locking system that was impervious to magnetic tampering?” and (2), 
+                     “What unique unlocking mechanisms are accessible to such a system?”. 
+                    <br><br>
+                    To answer these questions, I designed the Sensor-Assisted Fluxgate Enclosure (S.A.F.E.). By measuring a magnetic field as part of the unlocking mechanism,
+                     this system is impervious to magnetic tampering. Furthermore, by using a 2-axis fluxgate sensor, S.A.F.E. recognizes different positions and orientations 
+                     of a magnetic key to record a combination that unlocks the safe or triggers its alarm.  
+                     
+                </p>
+                <!--<a href="#contact" class="contact-button">Contact Me</a>-->
+                
+            </div>
+            <div class="hero-image" data-aos="fade-up">
+                <img class="hero-image" src="assets/pensive.jpg" width="512" alt="Hero Image" />
+            </div>
+        </section>
+
+   
+        <section id="operating">
+            <h2 class="text-gradient" data-aos="fade-up">Operating Principles</h2>
+            <div>
+                <p> 
+                    The magnetic sensor I used for this project was a 2D, ring-core fluxgate magnetic field sensor. 
+                    Ring-core fluxgate sensors are multiaxial and capable of detecting very small magnetic fields. They consist of a soft-magnetic toroidal core. 
+                    Wire is wrapped circularly along the thickness of the toroid to create a drive coil. Along orthogonal diameters of the toroid, 
+                    two more coils are wrapped to sense the X and Y dimensions. 
+                    <br><br>
+                    ε=(-ⅆϕ)/ⅆt
+                    <br>
+                    Eqn. 1: Faraday’s Law
+                    <br><br>
+                    When a sufficiently large AC signal passes through the drive coil, the soft-magnetic core is periodically driven into and out of positive saturation 
+                    and into and out of negative saturation. When the core is saturated, its permeability is low, and magnetic flux lines are pushed away. When the core 
+                    is unsaturated, its permeability is suddenly extremely high, pulling flux lines in. This sudden change in flux is registered as a voltage spike in the 
+                    sense coils as according to Faraday’s law. Under an external magnetic field, the flux through the sensor is changed, causing the amplitude of the voltage 
+                    spikes to increase or decrease. By detecting these voltage changes, one can reason about the magnetic field near the sensor. 
+
+                </p>
+
+            </div>
+        </section>
+
+
+
+        <section id="methods">
+            <h2 class="text-gradient" data-aos="fade-up">Methods</h2>
+            <div>
+                <ol type="A">
+                    <!-- add onclick on li -->
+                    <li data-aos="fade-up">
+                        <h3 class="port-title-text">Fluxgate sensor</h3>
+                        <p class="port-title-description">30 AWG magnet wire was wrapped circularly along the thickness of a toroid soft-magnetic
+                            ferrite core for 94 turns. Wire guides were laser-cut and attached to the ferrite core with double-
+                            sided scotch tape to correctly align the sense coils. 30 AWG wire was again wrapped along
+                            orthogonal diameters of the toroid for as many turns as would fit between the wire guides. Because
+                            this process had to be repeated several times due to the 30 AWG wire breaking, the number of
+                            sense-axis turns was not counted. A small flame was used to remove the enamel coating from the
+                            leads. 22 AWG wire was soldered to the leads to provide better connection and interfacing.
+                             </p>
+                            <!--<ul>
+                            <li>RTOS</li>
+                            <li>Python</li>
+                        </ul>-->
+                        
+                    </li>
+                    <li data-aos="fade-up">
+                        <h3 class="port-title-text">Circuitry</h3>
+                        <p class="port-title-description">Saturation current was experimentally measured. Circuit topology was designed as according to
+                            Fig. 1. Circuit was simulated using LTSpice. Based on simulation results, R6 was chosen such that
+                            the necessary saturation current flowed through the sensor. Following simulation, circuitry was
+                            assembled on a single breadboard. Optimal capacitor values were determined experimentally by trial
+                            and error. Sense coil outputs were wired to analog input ports on the Arduino. Protection diodes
+                            were connected from the sense coil outputs to ground. The Sparkfun TB6612FNG motor controller
+                            was used in combination with the Arduino to drive the 2nd door motor. The speaker was wired in
+                            parallel with a 1000 Ohm resistor and driven by a 500 Hz, 0-5V, 50% duty-cycle PWM signal from
+                            the Arduino. 4 AA batteries were used to provide 6V Vdd. Laptop and USB cable were used to
+                            power the Arduino and provide 5V Vcc. Wires were soldered to leads of the push button and dc
+                            motor to allow for a longer connection. The push button was wired to ground and a digital input of
+                            the Arduino.
+                        </p>
+                
+                    </li>
+                    <li data-aos="fade-up">
+                        <h3 class="port-title-text">Safe housing</h3>
+                        <p class="port-title-description">
+                            Adobe Illustrator and Fusion 360 were used to generate vectorizable images for laser-cutting.
+                            Side walls; 1st door protrusion; 2nd door latch and protrusion; door stoppers; doors; floor; & roof
+                            were designed and laser-cut from acrylic as shown in Fig. 3. Hook cam lock was gorilla taped to 1st
+                            door. Adafruit motor lock was gorilla taped to 2nd door. Breadboard was secured to the safe using
+                            double-sided scotch tape. Side walls secured to floor using gorilla tape. Masking tape was used to
+                            indicate combo locations and secure the Arduino to the safe.
+                        </p>
+                    </li>
+                    <li data-aos="fade-up">
+                        <h3 class="port-title-text">Software</h3>
+                        <p class="port-title-description">
+                            The Arduino IDE was used to develop the necessary code. Sparkfun TB6612FNG library was
+                            installed to help interface with the motor controller. An interrupt was attached to the falling edge of
+                            the push button (active LOW) to trigger the code to begin recording sensor data. Five averages were
+                            taken each trigger. X and Y sensor values were experimentally determined for each combo location
+                            and hardcoded thereafter. During operation, the sensor values are compared to the hardcoded
+                            values. The combo location corresponding to the smallest Euclidean distance to the measured value
+                            is recorded.
+                        </p>
+                    </li>
+
+                </ol>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2 class="text-gradient" data-aos="fade-up">Gallery</h2>
+            <div class="gallery_row">
+                <div class="gallery_column">
+                    <img src="assets/door1.jpg">
+                </div>
+
+                <div class="gallery_column">
+                  <img src="assets/door2.jpg">   
+
+                </div>
+    
+                <div class="gallery_column">
+                    <img src="assets/unlocked.jpg">
+         
+
+                </div>
+            
+
+
+              </div>
+        </section>
+
+      
+    </main>
+
+    <footer>
+        <p>The End!</p>
+        <p>Developed by Vinay Bhamidipati</p>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>       
+        AOS.init({
+            once: true,
+            delay: 0
+        });
+    </script>
+
+</body>
+
+<script src="../index.js""></script>
+
+</html>
