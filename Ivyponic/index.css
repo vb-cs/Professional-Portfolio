@@ -19,46 +19,8 @@ p {
   line-height: normal;
   margin: 0;
 }
-/*
-//scheme 2
-@olive: #77954d;
-@light_olive: #5f7d35;
-@gold: #ab9353;
-@plum: #4d2c3d;
-@light_plum: #753f5d;
-
-@background: @plum;
-@foreground: @light_plum;
-@lighter_foreground: black;
-@text_color: white;
-@gradient_start: white;
-@gradient_end: @gold;
-*/
-/*
-//scheme 4
-@rust: #B56357;
-@dark_rust: #be5241;
-@mint: #B4DBC0;
-@sea_foam: #A7B3A5; 
-@slate: #EAE3EA; 
-
-@background: @rust;
-@foreground: @dark_rust;
-@lighter_foreground: @sea_foam;
-@text_color: white;
-@gradient_start: @mint;
-@gradient_end: @slate;
-*/
 body {
   background-color: #76323F;
-  /*dark blue = #0b2545 
-  light blue = #13315c
-  olive = #56752a
-  gold = #ab9353
-  plum = #4d2c3d
-
-  
-  */
   color: white;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
@@ -99,6 +61,7 @@ footer {
   height: 64px;
   box-sizing: border-box;
   background-color: #913e4d;
+  margin-top: 64px;
 }
 footer p {
   width: 100%;
@@ -142,7 +105,7 @@ a:active {
   border-radius: 0.25rem;
 }
 .hamburger-icon:hover {
-  background-color: #134074;
+  background-color: #bd4a5f;
 }
 .nav-links {
   display: flex;
@@ -157,7 +120,7 @@ a:active {
 }
 .show-nav-links {
   top: 54px;
-  background-color: #13315c;
+  background-color: #913e4d;
   transition: all;
   transition-duration: 300ms;
 }
@@ -228,30 +191,9 @@ section {
   border-radius: 0.25rem;
   text-align: center;
 }
-#about {
-  text-align: center;
-}
-#about h2 {
-  text-align: center;
-}
-#about div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#about div div {
-  width: 100%;
-}
-#about ul {
-  width: 100%;
-}
-#about li {
-  display: flex;
-  margin-bottom: 1rem;
-}
-.about-icon {
-  width: 24px;
-  height: 24px;
+/* ------------------------------ DESIGN CSS -------------------------*/
+#design p {
+  margin-top: 12px;
 }
 #projects h2 {
   text-align: center;

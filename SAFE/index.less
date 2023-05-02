@@ -66,12 +66,14 @@ p {
 //scheme 5
 @oxblood: #76323F; 
 @light_oxblood: #913e4d;
+@lighter_oxblood: #bd4a5f;
 @tan: #C09F80;
 
 
 @background: @oxblood;
 @foreground: @light_oxblood;
 @lighter_foreground: tan;
+@lightest_foreground: @lighter_oxblood;
 @text_color: white;
 @gradient_start: white;
 @gradient_end: @tan;
@@ -144,6 +146,10 @@ ul {
   list-style: none;
 }
 
+ol li {
+  padding-top: 12px;
+}
+
 a:link,
 a:visited,
 a:hover,
@@ -183,7 +189,7 @@ a:active {
 }
 
 .hamburger-icon:hover {
-  background-color: #134074;
+  background-color: @lightest_foreground;
 }
 
 .nav-links {
@@ -201,7 +207,7 @@ a:active {
 
 .show-nav-links {
   top: 54px;
-  background-color: #13315c;
+  background-color: @foreground;
   transition: all;
   transition-duration: 300ms;
 }
@@ -284,37 +290,7 @@ section {
   text-align: center;
 }
 
-#about {
-  text-align: center;
-}
 
-#about h2 {
-  text-align: center;
-}
-
-#about div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#about div div {
-  width: 100%;
-}
-
-#about ul {
-  width: 100%;
-}
-
-#about li {
-  display: flex;
-  margin-bottom: 1rem;
-}
-
-.about-icon {
-  width: 24px;
-  height: 24px;
-}
 
 #projects h2 {
   text-align: center;
@@ -361,6 +337,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 64px;
+
 }
 
 footer p {
@@ -541,6 +519,24 @@ footer p {
     margin: 1.6%;
   }
 
+}
+
+.sidebyside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebyside-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.sidebyside-image {
+  width: 256px;
 }
 
 

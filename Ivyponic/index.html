@@ -24,19 +24,24 @@
             <div class="nav-links">
                 <ul>
                     <li>
-                        <a class="nav-links-item" href="../index.html">Home</a>
-                    </li>
-                    <li>
                         <a class="nav-links-item" href="#intro">Introduction</a> <!-- hero -> intro-->
                     </li>
                     <li>
-                        <a class="nav-links-item" href="#operating">Operating Principles</a> <!--projects -> operating -->
+                        <a class="nav-links-item" href="#design">Design</a> <!--projects -> operating -->
                     </li>
                     <li>
-                        <a class="nav-links-item" href="#methods">Methods</a> <!--projects -> operating -->
+                        <a class="nav-links-item" href="#testing">Testing</a> <!--projects -> operating -->
                     </li>
+                    <!--
                     <li>
-                        <a class="nav-links-item" href="#gallery">Gallery</a>  <!--passions -> gallery -->
+                        <a class="nav-links-item" href="#gallery">Gallery</a>                      
+                    </li>
+
+                    
+                    --->
+                    
+                    <li>
+                        <a class="nav-links-item" href="../index.html#projects">Projects</a>
                     </li>
                 </ul>
             </div>
@@ -51,120 +56,146 @@
         <section id="intro">
             <div class="hero-text" data-aos="fade-up">
                 <!-- <p class="greet-text">Hi there! I am</p>-->
-                <p class="text-gradient name-text">S.A.F.E.</p>
-                <p class="job-text">Sensor Assisted Fluxgate Enclosure</p>
-                <p class="intro-text">Modern, commercial digital locks have several glaring flaws that make cracking them easy for even the most novice criminals.
-                     Among these flaws is the ability to unlock a digital lock by simply bringing a strong magnet close enough. 
-                     This type of attack is known as magnetic tampering, and it was the inspiration for this project. 
-                     The questions I sought to answer were (1), “How could I design a digital locking system that was impervious to magnetic tampering?” and (2), 
-                     “What unique unlocking mechanisms are accessible to such a system?”. 
+                <p class="text-gradient name-text">Ivyponic</p>
+                <p class="job-text"> A Smart Gardening Solution</p>
+                <p class="intro-text">
+        
+                    Ivyponic is a sealed, hydroponic indoor gardening solution that can automatically grow a plant under customizable conditions, 
+                    including airflow, lighting, temperature, humidity, and nutrient density. 
                     <br><br>
-                    To answer these questions, I designed the Sensor-Assisted Fluxgate Enclosure (S.A.F.E.). By measuring a magnetic field as part of the unlocking mechanism,
-                     this system is impervious to magnetic tampering. Furthermore, by using a 2-axis fluxgate sensor, S.A.F.E. recognizes different positions and orientations 
-                     of a magnetic key to record a combination that unlocks the safe or triggers its alarm.  
+                    Ivyponic grows plants without the need to micromanage 
+                    or take care of the plants directly. It uses the PiTFT screen to allow for customization of these conditions to optimize for a 
+                    specific plant’s needs. Ivyponic contains a hydroponic growing system, using a pump to deliver fertilized water to plants, without 
+                    the need of soil. The on-board Raspberry Pi manages all variables for plant growth to maintain user-defined targets. 
+                    Ivyponic gathers the necessary environmental data using PPM, temperature, and humidity sensors. 
                      
                 </p>
                 <!--<a href="#contact" class="contact-button">Contact Me</a>-->
                 
             </div>
             <div class="hero-image" data-aos="fade-up">
-                <img class="hero-image" src="assets/pensive.jpg" width="512" alt="Hero Image" />
+                <img class="hero-image" src="assets/box_sexy.png" width="512" alt="Hero Image" />
             </div>
         </section>
 
    
-        <section id="operating">
-            <h2 class="text-gradient" data-aos="fade-up">Operating Principles</h2>
-            <div>
-                <p> 
-                    The magnetic sensor I used for this project was a 2D, ring-core fluxgate magnetic field sensor. 
-                    Ring-core fluxgate sensors are multiaxial and capable of detecting very small magnetic fields. They consist of a soft-magnetic toroidal core. 
-                    Wire is wrapped circularly along the thickness of the toroid to create a drive coil. Along orthogonal diameters of the toroid, 
-                    two more coils are wrapped to sense the X and Y dimensions. 
-                    <br><br>
-                    ε=(-ⅆϕ)/ⅆt
-                    <br>
-                    Eqn. 1: Faraday’s Law
-                    <br><br>
-                    When a sufficiently large AC signal passes through the drive coil, the soft-magnetic core is periodically driven into and out of positive saturation 
-                    and into and out of negative saturation. When the core is saturated, its permeability is low, and magnetic flux lines are pushed away. When the core 
-                    is unsaturated, its permeability is suddenly extremely high, pulling flux lines in. This sudden change in flux is registered as a voltage spike in the 
-                    sense coils as according to Faraday’s law. Under an external magnetic field, the flux through the sensor is changed, causing the amplitude of the voltage 
-                    spikes to increase or decrease. By detecting these voltage changes, one can reason about the magnetic field near the sensor. 
+        <section id="design">
+            <h2 class="text-gradient" data-aos="fade-up">Design</h2>
+            <div class="gallery_row">
+                <div class="gallery_column">
+                    <img src="assets/d_inital.jpg">
+                </div>
+                <div class="gallery_column">
+                  <img src="assets/d_final.jpg">   
+                </div>
+            </div>
+            <p> 
+                During the ideation phase of Ivyponic, 
+                we envisioned the system as depicted in the leftmost drawing above. The Raspberry Pi and PiTFT would be mounted at the bottom of the enclosure, 
+                displaying temperature, humidity, airflow, and lighting parameters. Above the Raspberry Pi, there would be a catch pan that would route 
+                excess drip back into the water pump. The water reservoir would be located at the top of the enclosure, and the pump would have two 
+                valve-controlled spray heads–one for misting the enclosure and another for watering the plants. The system would be complete with humidity, 
+                temperature, and airflow sensors. However, after realizing our pump could not activate the misters, we had to pivot to the drip-irrigation 
+                system as shown on the right. 
+                <br><br>
+                One constant in our design process was the chassis. Because we wanted to design a visually distinct and appealing home garden product, 
+                we used clear acrylic. This allowed the plant and lighting to be a focal point of the aesthetics, while also allowing users to see the behind-the-scenes 
+                of the device; the electronics, wiring, and pump system were fully visible. To construct the chassis, we measured and laser-cut acrylic panels, using 
+                Gorilla epoxy to glue them together. 
+            </p>
 
+            <div class="gallery_row">
+                <div class="gallery_column">
+                    <img src="assets/status.png">
+                    <img src="assets/lighting.png">
+                </div>
+                <div class="gallery_column">
+                    <img src="assets/targets.png">   
+                    <img src="assets/presets.png">   
+                </div>
+            </div>
+            
+            <p>
+                Another key point of design was the user interface on the PiTFT. 
+                At the top of each menu is a taskbar that displays the currently active menu. 
+                Additionally, there are forward, backward, and power icons that illustrate the functions of the adjacent buttons. 
+                The “Status” menu displays the current status of the enclosure including the current humidity, temperature, PPM, fan speed, and RGB values. 
+                These values are retrieved from the various sensors, the fan, and the LED light strip, respectively. 
+                The next screen allows the user to adjust the user-controlled targets to their desired values. For example, if the user wanted to maintain a 
+                temperature of 25 degrees celsius in the enclosure, he or she could set that from this menu. Next, the “Lighting” menu allows the user to 
+                toggle the lights on and off for the various hours in the day. Finally, the “Presets" menu allows the user to select from hard-coded presets. 
+                Each preset contains the optimal values for temperature, humidity, PPM, and RGB for a specific plant. Upon selecting one of these presets, 
+                these optimal values are loaded into the system, and the enclosure attempts to maintain them.
+            </p>
+
+            <div class="gallery_row">
+                <div class="gallery_column">
+                    <img src="assets/targets_select.jpg">
+                </div>
+                <div class="gallery_column">
+                    <img src="assets/lighting_select.jpg">   
+                </div>
+                <div class="gallery_column">
+                    <img src="assets/presets_select.jpg">   
+                </div>
+            </div>
+
+            <p>
+                In our original plans for Ivyponic, the display would be touchscreen, 
+                which influenced how we envisioned user interaction. However, upon implementing the menu interfaces, 
+                we discovered that our PiTFT touchscreen was dysfunctional, reporting random values for touch positions. Because of this, 
+                we had to redesign the display, coming up with UI design that did not require touch. Eventually, we settled 
+                on the above system where each screen has a select button that displays a nested menu with new button functions. 
+                These functions change based on the current menu. In the case of the first menu, the select menu was 
+                unnecessary because the menu does not allow for editing values. In the subsequent menus—targets, lighting, and 
+                presets—a select button was necessary. The select button switches the current tab to a "selection mode" where the side button 
+                functionality changes to allow for users to customize values. Upon entering the select menu, the TFT buttons cycle through parameters or 
+                toggle or increment values. In the place of a power button, a back button was added to return to the menu to "viewing mode".
+            </p>
+
+
+        </section>
+
+
+
+        <section id="testing">
+            <h2 class="text-gradient" data-aos="fade-up">Testing and Challenges</h2>
+            <div>
+                <p>
+                    To simplify testing and adhere to good coding practices, each module was segregated into its own file. 
+                    First, we tested each component within its respective 
+                    file under the <i>if __name__ == ‘__main__’:</i> line. Then, if it functioned correctly, we instantiated its object in the main file. Since the 
+                    pump and the fan were driven from the motor controller, we instantiated them both as Motor objects and tested them within the motor.py file.
+                    <br><br>
+                    This method allowed us to narrow down whether a problem was caused by the individual component 
+                    or rather the main code operation. A specific problem we faced was that the fan and pump were not functioning properly in the main code. Because we had 
+                    already tested them in motor.py, we knew it had to be a problem in main.py. We discovered that, because we were instantiating the fan and pump on new threads, 
+                    a thread would eventually not have GPIO.BCM set which would cause the program to crash. We fixed this problem by modifying the main code to spawn a single thread 
+                    each for the fan and pump.
+                    <br><br>
+
+                    Before running code, we first tested our hardware with benchtop EE tools including 
+                    power supplies and an oscilloscope. We determined that there were no hardware problems with the pump and fan we chose to use. 
+                    Furthermore, we identified GPIO pins on our Raspberry Pi that were dysfunctional.
+                    <br><br>
+
+                    A fundamental challenge we faced was that the maximum pressure our pump could generate was insufficient to activate 
+                    the misters we had planned to use in our original design. This forced us to pivot to a drip-irrigation system that did not require sprayers. We initially
+                    considered using a stronger pump that could activate the sprayers, but we decided against this due to time and budget constraints.
+                    <br><br>
+
+                    The integration of many sensors, motors, and lights on one Raspberry Pi also posed a challenge. Each of these devices required GPIO pins, but some of the GPIO pins 
+                    were fried, so wiring them up was complex. First, the PiTFT itself uses many of the GPIO pins and the SPI0 channel. To enable additional channels, we edited 
+                    /boot/config.txt, but strange PiTFT behavior meant that certain SPI channels could not be used. Sometimes, rebooting an indefinite number of times was required to 
+                    eventually enable some of the SPI channels. Furthermore, the NeoPixel light strips required specific GPIO pins, forcing us to shift around many of the GPIO pins
+                    until all devices, specifcially the PPM sensor (SPI) and temperature/humidity sensor (I2C), ran correctly. After demoing with the temperature sensor, the I2C 
+                    connection became unstable, and running i2cdetect revealed that the connection was flickering, with Linux constantly detecting and losing connection to the AHT20.
                 </p>
-
+         
             </div>
         </section>
 
-
-
-        <section id="methods">
-            <h2 class="text-gradient" data-aos="fade-up">Methods</h2>
-            <div>
-                <ol type="A">
-                    <!-- add onclick on li -->
-                    <li data-aos="fade-up">
-                        <h3 class="port-title-text">Fluxgate sensor</h3>
-                        <p class="port-title-description">30 AWG magnet wire was wrapped circularly along the thickness of a toroid soft-magnetic
-                            ferrite core for 94 turns. Wire guides were laser-cut and attached to the ferrite core with double-
-                            sided scotch tape to correctly align the sense coils. 30 AWG wire was again wrapped along
-                            orthogonal diameters of the toroid for as many turns as would fit between the wire guides. Because
-                            this process had to be repeated several times due to the 30 AWG wire breaking, the number of
-                            sense-axis turns was not counted. A small flame was used to remove the enamel coating from the
-                            leads. 22 AWG wire was soldered to the leads to provide better connection and interfacing.
-                             </p>
-                            <!--<ul>
-                            <li>RTOS</li>
-                            <li>Python</li>
-                        </ul>-->
-                        
-                    </li>
-                    <li data-aos="fade-up">
-                        <h3 class="port-title-text">Circuitry</h3>
-                        <p class="port-title-description">Saturation current was experimentally measured. Circuit topology was designed as according to
-                            Fig. 1. Circuit was simulated using LTSpice. Based on simulation results, R6 was chosen such that
-                            the necessary saturation current flowed through the sensor. Following simulation, circuitry was
-                            assembled on a single breadboard. Optimal capacitor values were determined experimentally by trial
-                            and error. Sense coil outputs were wired to analog input ports on the Arduino. Protection diodes
-                            were connected from the sense coil outputs to ground. The Sparkfun TB6612FNG motor controller
-                            was used in combination with the Arduino to drive the 2nd door motor. The speaker was wired in
-                            parallel with a 1000 Ohm resistor and driven by a 500 Hz, 0-5V, 50% duty-cycle PWM signal from
-                            the Arduino. 4 AA batteries were used to provide 6V Vdd. Laptop and USB cable were used to
-                            power the Arduino and provide 5V Vcc. Wires were soldered to leads of the push button and dc
-                            motor to allow for a longer connection. The push button was wired to ground and a digital input of
-                            the Arduino.
-                        </p>
-                
-                    </li>
-                    <li data-aos="fade-up">
-                        <h3 class="port-title-text">Safe housing</h3>
-                        <p class="port-title-description">
-                            Adobe Illustrator and Fusion 360 were used to generate vectorizable images for laser-cutting.
-                            Side walls; 1st door protrusion; 2nd door latch and protrusion; door stoppers; doors; floor; & roof
-                            were designed and laser-cut from acrylic as shown in Fig. 3. Hook cam lock was gorilla taped to 1st
-                            door. Adafruit motor lock was gorilla taped to 2nd door. Breadboard was secured to the safe using
-                            double-sided scotch tape. Side walls secured to floor using gorilla tape. Masking tape was used to
-                            indicate combo locations and secure the Arduino to the safe.
-                        </p>
-                    </li>
-                    <li data-aos="fade-up">
-                        <h3 class="port-title-text">Software</h3>
-                        <p class="port-title-description">
-                            The Arduino IDE was used to develop the necessary code. Sparkfun TB6612FNG library was
-                            installed to help interface with the motor controller. An interrupt was attached to the falling edge of
-                            the push button (active LOW) to trigger the code to begin recording sensor data. Five averages were
-                            taken each trigger. X and Y sensor values were experimentally determined for each combo location
-                            and hardcoded thereafter. During operation, the sensor values are compared to the hardcoded
-                            values. The combo location corresponding to the smallest Euclidean distance to the measured value
-                            is recorded.
-                        </p>
-                    </li>
-
-                </ol>
-            </div>
-        </section>
-
+        <!--
         <section id="gallery">
             <h2 class="text-gradient" data-aos="fade-up">Gallery</h2>
             <div class="gallery_row">
@@ -174,19 +205,15 @@
 
                 <div class="gallery_column">
                   <img src="assets/door2.jpg">   
-
                 </div>
     
                 <div class="gallery_column">
                     <img src="assets/unlocked.jpg">
-         
-
                 </div>
-            
-
-
+        
               </div>
         </section>
+        -->
 
       
     </main>

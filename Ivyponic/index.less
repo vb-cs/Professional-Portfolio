@@ -22,56 +22,18 @@ p {
 @dark_blue: #0b2545;
 @light_blue: #13315c;
 
-/*
-//scheme 2
-@olive: #77954d;
-@light_olive: #5f7d35;
-@gold: #ab9353;
-@plum: #4d2c3d;
-@light_plum: #753f5d;
-
-@background: @plum;
-@foreground: @light_plum;
-@lighter_foreground: black;
-@text_color: white;
-@gradient_start: white;
-@gradient_end: @gold;
-*/
-
-//scheme 3
-
-@terracotta: #945D60;
-@chili: #AF473c;
-@charcoal: #3c3c3c;
-@herb: #626E60;
-
-
-/*
-//scheme 4
-@rust: #B56357;
-@dark_rust: #be5241;
-@mint: #B4DBC0;
-@sea_foam: #A7B3A5; 
-@slate: #EAE3EA; 
-
-@background: @rust;
-@foreground: @dark_rust;
-@lighter_foreground: @sea_foam;
-@text_color: white;
-@gradient_start: @mint;
-@gradient_end: @slate;
-*/
-
 
 //scheme 5
 @oxblood: #76323F; 
 @light_oxblood: #913e4d;
+@lighter_oxblood: #bd4a5f;
 @tan: #C09F80;
 
 
 @background: @oxblood;
 @foreground: @light_oxblood;
 @lighter_foreground: tan;
+@lightest_foreground: @lighter_oxblood;
 @text_color: white;
 @gradient_start: white;
 @gradient_end: @tan;
@@ -80,14 +42,6 @@ p {
 
 body {
   background-color: @background;
-  /*dark blue = #0b2545 
-  light blue = #13315c
-  olive = #56752a
-  gold = #ab9353
-  plum = #4d2c3d
-
-  
-  */
   color: @text_color;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
@@ -132,6 +86,7 @@ footer {
   height: 64px;
   box-sizing: border-box;
   background-color: @foreground;
+  margin-top: 64px;
 }
 
 footer p {
@@ -183,7 +138,7 @@ a:active {
 }
 
 .hamburger-icon:hover {
-  background-color: #134074;
+  background-color: @lightest_foreground;
 }
 
 .nav-links {
@@ -201,7 +156,7 @@ a:active {
 
 .show-nav-links {
   top: 54px;
-  background-color: #13315c;
+  background-color: @foreground;
   transition: all;
   transition-duration: 300ms;
 }
@@ -284,37 +239,15 @@ section {
   text-align: center;
 }
 
-#about {
-  text-align: center;
+/* ------------------------------ DESIGN CSS -------------------------*/
+
+
+#design p{
+  margin-top: 12px;
 }
 
-#about h2 {
-  text-align: center;
-}
 
-#about div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-#about div div {
-  width: 100%;
-}
-
-#about ul {
-  width: 100%;
-}
-
-#about li {
-  display: flex;
-  margin-bottom: 1rem;
-}
-
-.about-icon {
-  width: 24px;
-  height: 24px;
-}
 
 #projects h2 {
   text-align: center;

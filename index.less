@@ -11,72 +11,40 @@ html {
   scroll-behavior: smooth;
 }
 
-p {
-  font-size: 12pt;
-  line-height: normal;
-  margin: 0;
-}
 
 //scheme 1
 
 @dark_blue: #0b2545;
 @light_blue: #13315c;
 
-/*
-//scheme 2
-@olive: #77954d;
-@light_olive: #5f7d35;
-@gold: #ab9353;
-@plum: #4d2c3d;
-@light_plum: #753f5d;
-
-@background: @plum;
-@foreground: @light_plum;
-@lighter_foreground: black;
-@text_color: white;
-@gradient_start: white;
-@gradient_end: @gold;
-*/
-
-//scheme 3
-
-@terracotta: #945D60;
-@chili: #AF473c;
-@charcoal: #3c3c3c;
-@herb: #626E60;
-
-
-/*
-//scheme 4
-@rust: #B56357;
-@dark_rust: #be5241;
-@mint: #B4DBC0;
-@sea_foam: #A7B3A5; 
-@slate: #EAE3EA; 
-
-@background: @rust;
-@foreground: @dark_rust;
-@lighter_foreground: @sea_foam;
-@text_color: white;
-@gradient_start: @mint;
-@gradient_end: @slate;
-*/
 
 
 //scheme 5
 @oxblood: #76323F; 
 @light_oxblood: #913e4d;
+@lighter_oxblood: #bd4a5f;
 @tan: #C09F80;
 
 
 @background: @oxblood;
 @foreground: @light_oxblood;
 @lighter_foreground: tan;
+@lightest_foreground: @lighter_oxblood;
 @text_color: white;
 @gradient_start: white;
 @gradient_end: @tan;
 
 
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  font-size: 12pt;
+  line-height: normal;
+  margin: 0;
+}
 
 body {
   background-color: @background;
@@ -85,7 +53,7 @@ body {
   olive = #56752a
   gold = #ab9353
   plum = #4d2c3d
-
+  
   
   */
   color: @text_color;
@@ -127,22 +95,22 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   padding-left: 4rem;
   padding-right: 4rem;
   height: 64px;
   box-sizing: border-box;
   background-color: @foreground;
+
 }
 
 footer p {
   width: 100%;
   text-align: center;
+  font-size: 10pt;
 }
 
-ul {
-  padding: 0;
-  list-style: none;
-}
 
 a:link,
 a:visited,
@@ -183,7 +151,7 @@ a:active {
 }
 
 .hamburger-icon:hover {
-  background-color: #134074;
+  background-color: @lightest_foreground;
 }
 
 .nav-links {
@@ -201,7 +169,7 @@ a:active {
 
 .show-nav-links {
   top: 54px;
-  background-color: #13315c;
+  background-color: @foreground;
   transition: all;
   transition-duration: 300ms;
 }
@@ -231,6 +199,7 @@ a:active {
   background-color: #C09F80;
   border-bottom: 3px solid #ffffff;
 }
+
 
 section {
   min-height: 100px/*calc(100vh)*/;
@@ -284,37 +253,8 @@ section {
   text-align: center;
 }
 
-#about {
-  text-align: center;
-}
 
-#about h2 {
-  text-align: center;
-}
-
-#about div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#about div div {
-  width: 100%;
-}
-
-#about ul {
-  width: 100%;
-}
-
-#about li {
-  display: flex;
-  margin-bottom: 1rem;
-}
-
-.about-icon {
-  width: 24px;
-  height: 24px;
-}
+/* ------------------------------ PROJECTS CSS -------------------------*/
 
 #projects h2 {
   text-align: center;
@@ -339,18 +279,65 @@ section {
   display: flex;
 }
 
+#projects li.hoverable:hover {
+  cursor: pointer;
+  background-color: @lightest_foreground;
+  border-bottom: 3px solid #ffffff;
+}
+
+
 #projects ul ul li {
   background-color: @lighter_foreground;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
   border-radius: 0.25rem;
-  padding: 0.5rem;
+  padding: .25rem;
   font-size: 10pt;
+  text-align: justify;
 }
+
+/* ------------------------------ EXPERIENCE CSS -------------------------*/
+#experience div {
+  display: flex;
+  flex-direction: column;
+}
+
+#experience li {
+  background-color: @foreground;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+#experience ul li p {
+  margin-bottom: 1rem;
+}
+
+#experience ul ul {
+  display: flex;
+}
+
+#experience li.hoverable:hover {
+  cursor: pointer;
+  background-color: @lightest_foreground;
+  border-bottom: 3px solid #ffffff;
+}
+
+
+#experience ul ul li {
+  background-color: @lighter_foreground;
+  margin-right: 0.25rem;
+  border-radius: 0.25rem;
+  padding: .25rem;
+  font-size: 10pt;
+  text-align: justify;
+}
+
 
 .port-title-text {
   margin: 0%;
   margin-bottom: 1rem;
 }
+
+/* ------------------------------ CONTACT CSS -------------------------*/
 
 #contact h2 {
   text-align: center;
@@ -380,15 +367,9 @@ section {
   align-items: center;
 }
 
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-footer p {
-  font-size: 10pt;
-}
+/* ------------------------------ COMPATIBILITY CSS -------------------------*/
+
 
 @media (min-width: 540px) {
   section {
@@ -577,6 +558,8 @@ footer p {
   }
 }
 
+/* ------------------------------ CUSTOM CLASSES CSS -------------------------*/
+
 
 .gallery_row {
   display: flex;
@@ -595,6 +578,8 @@ footer p {
   vertical-align: middle;
   width: 100%;
 }
+
+
 
 .text-gradient {
   background: linear-gradient(270deg, @gradient_start, @gradient_end);

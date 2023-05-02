@@ -24,9 +24,6 @@
             <div class="nav-links">
                 <ul>
                     <li>
-                        <a class="nav-links-item" href="../index.html">Home</a>
-                    </li>
-                    <li>
                         <a class="nav-links-item" href="#intro">Introduction</a> <!-- hero -> intro-->
                     </li>
                     <li>
@@ -37,6 +34,9 @@
                     </li>
                     <li>
                         <a class="nav-links-item" href="#gallery">Gallery</a>  <!--passions -> gallery -->
+                    </li>
+                    <li>
+                        <a class="nav-links-item" href="../index.html#projects">Projects</a>
                     </li>
                 </ul>
             </div>
@@ -52,8 +52,8 @@
             <div class="hero-text" data-aos="fade-up">
                 <!-- <p class="greet-text">Hi there! I am</p>-->
                 <p class="text-gradient name-text">S.A.F.E.</p>
-                <p class="job-text">Sensor Assisted Fluxgate Enclosure</p>
-                <p class="intro-text">Modern, commercial digital locks have several glaring flaws that make cracking them easy for even the most novice criminals.
+                <p class="job-text">Sensor Assisted Flux-gate Enclosure</p>
+                <p class="intro-text">Modern, commercial digital locks have glaring flaws that make cracking them easy for even the most novice criminals.
                      Among these flaws is the ability to unlock a digital lock by simply bringing a strong magnet close enough. 
                      This type of attack is known as magnetic tampering, and it was the inspiration for this project. 
                      The questions I sought to answer were (1), “How could I design a digital locking system that was impervious to magnetic tampering?” and (2), 
@@ -76,28 +76,55 @@
         <section id="operating">
             <h2 class="text-gradient" data-aos="fade-up">Operating Principles</h2>
             <div>
-                <p> 
-                    The magnetic sensor I used for this project was a 2D, ring-core fluxgate magnetic field sensor. 
-                    Ring-core fluxgate sensors are multiaxial and capable of detecting very small magnetic fields. They consist of a soft-magnetic toroidal core. 
-                    Wire is wrapped circularly along the thickness of the toroid to create a drive coil. Along orthogonal diameters of the toroid, 
-                    two more coils are wrapped to sense the X and Y dimensions. 
-                    <br><br>
-                    ε=(-ⅆϕ)/ⅆt
-                    <br>
-                    Eqn. 1: Faraday’s Law
-                    <br><br>
-                    When a sufficiently large AC signal passes through the drive coil, the soft-magnetic core is periodically driven into and out of positive saturation 
-                    and into and out of negative saturation. When the core is saturated, its permeability is low, and magnetic flux lines are pushed away. When the core 
-                    is unsaturated, its permeability is suddenly extremely high, pulling flux lines in. This sudden change in flux is registered as a voltage spike in the 
-                    sense coils as according to Faraday’s law. Under an external magnetic field, the flux through the sensor is changed, causing the amplitude of the voltage 
-                    spikes to increase or decrease. By detecting these voltage changes, one can reason about the magnetic field near the sensor. 
+                <ol type="A">
+                    <li data-aos="fade-up">
+                        <h3 class="port-title-text">Flux-gate sensor</h3>
+                        <p class="port-title-description">
+                            The magnetic sensor I used for this project was a 2D, ring-core fluxgate magnetic field sensor. 
+                            Ring-core fluxgate sensors are multiaxial and capable of detecting very small magnetic fields. They consist of a soft-magnetic toroidal core. 
+                            Wire is wrapped circularly along the thickness of the toroid to create a drive coil. Along orthogonal diameters of the toroid, 
+                            two more coils are wrapped to sense the X and Y components of the magnetic field. 
+                        </p>
+                        <p class="port-title-description" style="text-align: center;">
+                            <br><br>
+                            ε=(-ⅆϕ)/ⅆt
+                            <br>
+                            Eqn. 1: Faraday’s Law
+                            <br><br>
 
-                </p>
-
+                        </p>
+                        <p class="port-title-description">
+                            When a sufficiently large AC signal passes through the drive coil, the soft-magnetic core is periodically driven into and out of positive saturation 
+                            and into and out of negative saturation. When the core is saturated, its permeability is low, and magnetic flux lines are pushed away. When the core 
+                            is unsaturated, its permeability is suddenly extremely high, pulling flux lines in. This sudden change in flux is registered as a voltage spike in the 
+                            sense coils as according to Faraday’s law. Under an external magnetic field, the flux through the sensor is changed, causing the amplitude of the voltage 
+                            spikes to increase or decrease. By detecting these voltage changes, one can reason about the magnetic field near the sensor. 
+                        </p>
+                
+                    </li>
+                    <li data-aos="fade-up">
+                        <h3 class="port-title-text">Driving Circuit</h3>
+                    
+                        <div style="text-align: center;">
+                            <img src="assets/circuit.bmp">
+                        </div>
+                        <p> 
+                            The figure above depicts the circuit I used to drive the fluxgate sensor. 
+                            First, a 500 Hz, 0-5V, 50% duty-cycle PWM signal is driven by the Arduino. This signal is passed 
+                            through a resistive divider to scale the signal down to 0-2V. To remove the DC offset, the signal 
+                            is passed through a 1 uF capacitor. At node Vg, the purpose of the resistive divider is to set the 
+                            node’s DC bias to 5V. Since Vdd is 6V and V¬th of the IRF530 power MOSFET is 4V, the DC bias of 5V 
+                            allows for the maximum input swing. I chose the IRF530 power MOSFET since it could drive the high currents 
+                            (>100mA) necessary to push the fluxgate sensor in and out of saturation. At the output, a 22 nF capacitor is 
+                            used to remove the DC current that would otherwise flow through the fluxgate sensor. In the schematic, R5 
+                            and L1 serve as the equivalent circuit model of the fluxgate sensor. 
+                            An additional resistor, R6, is used to provide correct biasing to the MOSFET.
+                        </p>
+                       
+                    </li>
+                </ol>
             </div>
         </section>
-
-
 
         <section id="methods">
             <h2 class="text-gradient" data-aos="fade-up">Methods</h2>

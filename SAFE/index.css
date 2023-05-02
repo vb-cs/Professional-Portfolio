@@ -108,6 +108,9 @@ ul {
   padding: 0;
   list-style: none;
 }
+ol li {
+  padding-top: 12px;
+}
 a:link,
 a:visited,
 a:hover,
@@ -289,6 +292,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 64px;
 }
 footer p {
   font-size: 10pt;
@@ -439,6 +443,21 @@ footer p {
     max-width: 30%;
     margin: 1.6%;
   }
+}
+.sidebyside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebyside-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.sidebyside-image {
+  width: 256px;
 }
 .gallery_row {
   display: flex;
