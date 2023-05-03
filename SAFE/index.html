@@ -35,9 +35,12 @@
                     <li>
                         <a class="nav-links-item" href="#methods">Methods</a> <!--projects -> operating -->
                     </li>
-                    <li>
-                        <a class="nav-links-item" href="#gallery">Gallery</a>  <!--passions -> gallery -->
-                    </li>
+                    <!-- 
+
+                        <li>
+                            <a class="nav-links-item" href="#gallery">Gallery</a>  
+                        </li>
+                    -->
                     <li>
                         <a class="nav-links-item" href="../index.html#projects">Projects</a>
                     </li>
@@ -76,7 +79,7 @@
         </section>
 
         <section id="overview">
-            <h2 class="text-gradient" data-aos="fade-up">Gallery</h2>
+            <h2 class="text-gradient" data-aos="fade-up">Overview</h2>
             <div class="gallery_row">
                 <div class="gallery_column">
                     <img src="assets/door1.jpg">
@@ -91,9 +94,16 @@
                     <img src="assets/unlocked.jpg">
                 </div>
             </div>
-            <p>S.A.F.E. is a 2-stage safe. As depicted on the leftmost image, the first stage is a simple 
-                camlock mechanism 
+            <p>S.A.F.E. is a 2-stage safe. As depicted on the leftmost image, a simple camlock mechanism protects the first stage. 
+                The first door opens to reveal the second stage which is protected by the novel magnetic unlocking system I devised. 
+                Visible in the second photo are small blue pads lying in front of the door. These small blue pads indicate the location
+                and orientation along which the magnetic key (a small hard magnet) must be placed. The order in which the user must place 
+                the magnetic key along the pads is determined by the safe owner in software. The combination can be as long as the user 
+                deems is necessary. If an incorrect combination is entered, an Arduino activates an alarm and prevents any further attempts 
+                to unlock the door. If the correct combination is entered, the Arduino signals the DC motor (seen in the second photo) to 
+                rotate, unlocking the door and revealing the contents of the safe. 
             </p>
+
 
 
         </section>

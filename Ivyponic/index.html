@@ -144,11 +144,11 @@
                 In our original plans for Ivyponic, the display would be touchscreen, 
                 which influenced how we envisioned user interaction. However, upon implementing the menu interfaces, 
                 we discovered that our PiTFT touchscreen was dysfunctional, reporting random values for touch positions. Because of this, 
-                we had to redesign the display, coming up with UI design that did not require touch. Eventually, we settled 
+                we had to redesign the display, coming up with a UI design that did not require touch. Eventually, we settled 
                 on the above system where each screen has a select button that displays a nested menu with new button functions. 
                 These functions change based on the current menu. In the case of the first menu, the select menu was 
                 unnecessary because the menu does not allow for editing values. In the subsequent menus—targets, lighting, and 
-                presets—a select button was necessary. The select button switches the current tab to a "selection mode" where the side button 
+                presets—a select button was necessary. The select button switches the current tab to a "selection mode" (depicted above) where the side button 
                 functionality changes to allow for users to customize values. Upon entering the select menu, the TFT buttons cycle through parameters or 
                 toggle or increment values. In the place of a power button, a back button was added to return to the menu to "viewing mode".
             </p>
@@ -180,13 +180,13 @@
                     <br><br>
 
                     A fundamental challenge we faced was that the maximum pressure our pump could generate was insufficient to activate 
-                    the misters we had planned to use in our original design. This forced us to pivot to a drip-irrigation system that did not require sprayers. We initially
+                    the misters we planned to use in our original design. This forced us to pivot to a drip-irrigation system that did not require sprayers. We initially
                     considered using a stronger pump that could activate the sprayers, but we decided against this due to time and budget constraints.
                     <br><br>
 
                     The integration of many sensors, motors, and lights on one Raspberry Pi also posed a challenge. Each of these devices required GPIO pins, but some of the GPIO pins 
-                    were fried, so wiring them up was complex. First, the PiTFT itself uses many of the GPIO pins and the SPI0 channel. To enable additional channels, we edited 
-                    /boot/config.txt, but strange PiTFT behavior meant that certain SPI channels could not be used. Sometimes, rebooting an indefinite number of times was required to 
+                    were fried, so wiring them up was complex. First, the PiTFT itself uses many of the GPIO pins and the SPI0 channel. To enable additional SPI channels, we edited 
+                    /boot/config.txt, but strange PiTFT behavior meant that certain channels could not be used. Sometimes, rebooting an indefinite number of times was required to 
                     eventually enable some of the SPI channels. Furthermore, the NeoPixel light strips required specific GPIO pins, forcing us to shift around many of the GPIO pins
                     until all devices, specifcially the PPM sensor (SPI) and temperature/humidity sensor (I2C), ran correctly. After demoing with the temperature sensor, the I2C 
                     connection became unstable, and running i2cdetect revealed that the connection was flickering, with Linux constantly detecting and losing connection to the AHT20.

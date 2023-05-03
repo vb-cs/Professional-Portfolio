@@ -193,6 +193,9 @@ section {
   border-radius: 0.25rem;
   text-align: center;
 }
+#overview p {
+  margin-top: 12px;
+}
 #projects h2 {
   text-align: center;
 }
