@@ -99,7 +99,7 @@
                 Visible in the second photo are small blue pads lying in front of the door. These small blue pads indicate the location
                 and orientation along which the magnetic key (a small hard magnet) must be placed. The order in which the user must place 
                 the magnetic key along the pads is determined by the safe owner in software. The combination can be as long as the user 
-                deems is necessary. If an incorrect combination is entered, an Arduino activates an alarm and prevents any further attempts 
+                deems necessary. If an incorrect combination is entered, an Arduino activates an alarm and prevents any further attempts 
                 to unlock the door. If the correct combination is entered, the Arduino signals the DC motor (seen in the second photo) to 
                 rotate, unlocking the door and revealing the contents of the safe. 
             </p>
@@ -132,9 +132,10 @@
                         <p class="port-title-description">
                             When a sufficiently large AC signal passes through the drive coil, the soft-magnetic core is periodically driven into and out of positive saturation 
                             and into and out of negative saturation. When the core is saturated, its permeability is low, and magnetic flux lines are pushed away. When the core 
-                            is unsaturated, its permeability is suddenly extremely high, pulling flux lines in. This sudden change in flux is registered as a voltage spike in the 
-                            sense coils as according to Faraday’s law. Under an external magnetic field, the flux through the sensor is changed, causing the amplitude of the voltage 
-                            spikes to increase or decrease. By detecting these voltage changes, one can reason about the magnetic field near the sensor. 
+                            is unsaturated, its permeability is suddenly extremely high, pulling flux lines in. Under an external magnetic field, there is a phase shift in the B field between the two halves of the ring-core 
+                            which results in a net flux. This sudden change in flux is registered as a voltage spike in the 
+                            sense coils as according to Faraday’s law. Depending on the strength of the external magnetic field, the amplitude of the voltage 
+                            spikes increase or decrease. By detecting these voltage changes, one can reason about the magnetic field near the sensor. 
                         </p>
                 
                     </li>

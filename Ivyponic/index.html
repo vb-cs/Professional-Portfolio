@@ -30,6 +30,9 @@
                         <a class="nav-links-item" href="#design">Design</a> <!--projects -> operating -->
                     </li>
                     <li>
+                        <a class="nav-links-item" href="#methods">Methods</a> <!--projects -> operating -->
+                    </li>
+                    <li>
                         <a class="nav-links-item" href="#testing">Testing</a> <!--projects -> operating -->
                     </li>
                     <!--
@@ -156,7 +159,49 @@
 
         </section>
 
+        <section id="methods">
+            <h2 class="text-gradient" data-aos="fade-up">Methods</h2>
+            <div>
+                <ol type="A">
+                    <li data-aos="fade-up">
+                        <h3 class="port-title-text">Enclosure</h3>
+                        <p class="port-title-description">
+                            Acrylic was measured and laser-cut to form the walls of the enclosure. The acrylic panels were secured together using Gorilla epoxy. 
+                            A hole was drilled at the top of the enclosure to create an inlet for fertilizer and water. Another hole was drilled on the bottom side of 
+                            the enclosure to provide an opening for the Raspberry Pi power cord. 
+                            An acrylic crossbeam was cut from the scraps and epoxied to the side of the enclosure to act as a support for the plant. 
+                            Growing medium was balanced on the crossbar. Holes were drilled into the side of the enclosure to allow for air intake. A 12V DC fan
+                            was ziptied to the side of the enclosure. LED light strips were fastened to the top of the enclosure. The circuitry and Raspberry Pi 
+                            were secured to the enclosure using double-sided tape.
+                        </p>
 
+                
+                    </li>
+                    <li data-aos="fade-up">
+                        <h3 class="port-title-text">Circuitry</h3>
+                        <p> 
+                            A breadboard was used to consolidate the circuitry. The Raspberry Pi was connected to the breadboard using the PiTFT passthrough. 
+                            A power supply provided 5V to the LED lights. Two 6V battery packs were wired in series to provide 12V Vcc to the pump and DC fan. 
+                            The pump and DC fan were controlled using the SparkFun Dual TB6612FNG motor controller. The AHT20 temperature and humidity sensor 
+                            was wired to the RPi through I2C. The TDS sensor was wired to an MCP3008 ADC. The ADC communicated with the Raspberry Pi through SPI. 
+                            The Neopixel LED strip data input & motor controller inputs were connected to GPIO outputs on the RPi.    
+                            
+                        </p>
+                       
+                    </li>
+                    <li data-aos="fade-up">
+                        <h3 class="port-title-text">Software</h3>
+                        <p> 
+                            Python was used for all code. The Raspberry Pi ran Raspberry Pi OS with PREEMPT-RT enabled. AHT20.py, LED.py, motor.py, & PPM.py each controlled its 
+                            respective module. All modules were instantiated within main.py which kept track of state, displayed the onscreen graphics, and coordinated external 
+                            modules using multithreading. A separate file, graphics.py, contained classes for the graphical objects displayed on the PiTFT. 
+                            
+                        </p>
+                       
+                    </li>
+                </ol>
+            </div>
+        </section>
 
         <section id="testing">
             <h2 class="text-gradient" data-aos="fade-up">Testing and Challenges</h2>
@@ -173,6 +218,10 @@
                     a thread would eventually not have GPIO.BCM set which would cause the program to crash. We fixed this problem by modifying the main code to spawn a single thread 
                     each for the fan and pump.
                     <br><br>
+
+                    <div style="text-align: center;">
+                        <img class = "center_image" src="assets/vinay_box.png">
+                    </div>
 
                     Before running code, we first tested our hardware with benchtop EE tools including 
                     power supplies and an oscilloscope. We determined that there were no hardware problems with the pump and fan we chose to use. 
@@ -194,26 +243,6 @@
          
             </div>
         </section>
-
-        <!--
-        <section id="gallery">
-            <h2 class="text-gradient" data-aos="fade-up">Gallery</h2>
-            <div class="gallery_row">
-                <div class="gallery_column">
-                    <img src="assets/door1.jpg">
-                </div>
-
-                <div class="gallery_column">
-                  <img src="assets/door2.jpg">   
-                </div>
-    
-                <div class="gallery_column">
-                    <img src="assets/unlocked.jpg">
-                </div>
-        
-              </div>
-        </section>
-        -->
 
       
     </main>
